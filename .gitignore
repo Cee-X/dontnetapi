@@ -1,0 +1,46 @@
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.userprefs
+
+# Ignore logs
+*.log
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore Rider settings
+.idea/
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore compiled DLLs
+*.dll
+*.exe
+*.pdb
+
+# Ignore NuGet packages
+*.nupkg
+.nuget/
+
+# Ignore generated files
+*.generated.cs
+*.genruntimeconfig.cache
+
+# Ignore configuration files
+appsettings.Development.json
+appsettings.json
+
+# Ignore other files
+*.cache
+*.props
+*.targets
+*.editorconfig
+*.ruleset
