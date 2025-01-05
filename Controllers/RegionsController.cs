@@ -18,23 +18,27 @@ public class RegionsController : ControllerBase
     private readonly NZWalksDbContext _context;
     private readonly IRegionsRepository _regionsRepository;
     private readonly IMapper _mapper;
-    public RegionsController(NZWalksDbContext context, IRegionsRepository regionsRepository, IMapper mapper)
+
+    private readonly ILogger<RegionsController> _logger;
+    public RegionsController(NZWalksDbContext context, IRegionsRepository regionsRepository, IMapper mapper, ILogger<RegionsController> Logger)
     {
         _context = context;
         _regionsRepository = regionsRepository;
         _mapper = mapper;
+        _logger = Logger;
 
     }
     
    [HttpGet(Name = "Regions")]
    public async Task<IActionResult> GetALL()
    {
+        
         //get all regions from the database
         var regions =  await _regionsRepository.GetAll();
         //convert the list of regions to a list of RegionDTO
         var regionsDTO = _mapper.Map<List<RegionDTO>>(regions);
         //return the list of RegionDTO
-        return Ok(regionsDTO);
+        return Ok(regionsDTO);  
    }
 
    [HttpGet("{id}")]
